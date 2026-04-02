@@ -35,6 +35,17 @@ Users can register, login, search jobs, apply, and track applications.
 
 ## 📷 Screenshots
 
+### 🏠 Home Page
+![Home](home.png)
+### 🔐 Registration Page
+![Login](register.png)
+
+### 🔐 Login Page
+![Login](login.png)
+
+### 📊 Dashboard
+![Dashboard](dashboard.png)
+
 
 
 ---

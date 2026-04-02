@@ -39,3 +39,9 @@ body{
   border-radius: 10px;
   align-items: center;
 } 
+
+.footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

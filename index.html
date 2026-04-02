@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Application Portal</title>
   <link rel="stylesheet" href="./style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
@@ -18,8 +18,12 @@
         <span id="userName" class="text-white me-3"></span>
         <!-- <span id="userEmail" class="text-white me-3"></span> -->
         <a href="dashboard.html" class="btn btn-outline-light">Dashboard</a>
+
+        <!-- wrapping -->
+         <div id="authButtons" style="display: inline">
         <a href="register.html" class="btn btn-primary">Register</a>
         <a href="login.html" class="btn btn-outline-light">Login</a>
+        </div>
 
         <button class="btn btn-danger" onclick="logout()">Logout</button>
       </div>

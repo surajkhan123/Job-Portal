@@ -1,7 +1,10 @@
-let jobs =[
-  {title: "Frontend Developer", location: "Bangalore", salary: "6 LPA"},
-  {title: "Backend Developer", location: "Mumbai", salary: "8 LPA"},
-  {title: "Full Stack Developer", location: "Noida", salary: "10 LPA"},
+let jobs = [
+  {title: "Frontend Developer", company: "TCS", location: "Bangalore", salary: "6 LPA", exp: "1-2 yrs"},
+  {title: "Backend Developer", company: "Infosys", location: "Mumbai", salary: "8 LPA", exp: "2-3 yrs"},
+  {title: "Full Stack Developer", company: "Wipro", location: "Noida", salary: "10 LPA", exp: "3-5 yrs"},
+  {title: "React Developer", company: "Accenture", location: "Hyderabad", salary: "9 LPA", exp: "2+ yrs"},
+  {title: "Python Developer", company: "Capgemini", location: "Chennai", salary: "8 LPA", exp: "1-3 yrs"},
+  {title: "Data Analyst", company: "HCL", location: "Pune", salary: "7 LPA", exp: "1-2 yrs"}
 ];
 
 const jobList = document.getElementById("job-list");
@@ -16,8 +19,10 @@ function displayJobs(data){
     div.innerHTML = `
     <div class="job-card">
     <h4>${job.title}</h4>
-    <p>${job.location}</p>
-    <p>${job.salary}</p>
+    <p><strong>${job.company}</strong></p>
+    <p>📍 ${job.location}</p>
+    <p>&#8377 ${job.salary}</p>
+    <p><span class="badge bg-success">${job.exp}</span></p>
     <button class="btn btn-primary apply-btn" onclick="applyJob('${job.title}', this)">Apply</button>
     </div>
     
@@ -99,6 +104,14 @@ if(storedUser){
 
 // logout
 function logout(){
-  localStorage.removeItem("loggedUser");
+  localStorage.removeItem("loggedInUser");
   window.location.href = "login.html";
+}
+
+//hide register & login button after login
+
+let isLoggedIn = localStorage.getItem("loggedInUser");
+let authButtons = document.getElementById("authButtons");
+if(isLoggedIn && authButtons){
+  authButtons.style.display = "none";
 }

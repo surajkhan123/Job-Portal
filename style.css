@@ -1,0 +1,30 @@
+.hero{
+  height: 60vh;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+}
+
+.hero h1{
+  font-size: 3rem;
+  font-weight: bold;
+}
+#searchInput{
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+/* Custom Job Card */
+ .job-card{
+  border-radius: 15px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.job-card:hover{
+  transform: scale(1.03);
+}
+.apply-btn{
+  border-radius: 20px;
+} 

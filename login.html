@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <title>Login</title>
+</head>
+<body class="bg-light">
+  <div class="containetr mt-5">
+    <div class="card p-4 mx-auto" style="max-width: 400px">
+      <h2 class="text-center">Login</h2>
+
+      <!-- Error Message -->
+       <p id="errorMsg" class="text-center"></p>
+
+       <input type="email" id="email" class="form-control my-2" placeholder="Enter Email">
+       <input type="password" id="password" class="form-control my-2" placeholder="Enter Password">
+
+       <button class="btn btn-primary w-100" onclick="login()">Login</button>
+       
+       <p class="text-center mt-2">
+        <a href="forgot.html">Forgot Password?</a>
+       </p>
+    </div>
+  </div>
+
+  <!-- Script code -->
+  
+  <script>
+    function login(){
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let errorMsg = document.getElementById("errorMsg");
+
+      errorMsg.innerText = " ";
+
+      // get stored user
+      let storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if(!storedUser){
+        errorMsg.innerText = "⚠️ No user found. Please register first.";
+        return;
+      }
+
+      if(email ==="" || password ===""){
+        errorMsg.innerText = "⚠️ Please fill all fields";
+        return;
+      }
+
+      if(email === storedUser.email && password === storedUser.password){
+
+        localStorage.setItem("loggedInUser", email);
+        
+        //errorMsg.style.color = "green";
+        errorMsg.classList.remove("text-danger");
+        errorMsg.classList.add("text-success");
+        errorMsg.innerText = "✅ Login successful! Redirecting...";
+
+        setTimeout(()=>{
+          window.location.href ="index.html";
+        },1500);
+      } else {
+        errorMsg.innerText = "❌ Invalid email or password";
+      }
+
+    }
+
+  </script>
+</body>
+</html>

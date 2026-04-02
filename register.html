@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <div class="card p-4 mx-auto" style="max-width: 400px";>
+      <h3 class="text-center">Register</h3>
+
+      <p id="errorMsg"></p>
+
+      <input type="text" id="name" class="form-control my-2" placeholder="Enter Your Name">
+      <input type="email" id="email" class="form-control my-2" placeholder="Enter Your Email">
+      <input type="password" id="password" class="form-control my-2" placeholder="Enter Password">
+
+      <button class="btn btn-primary w-100" onclick="register()">Register</button>
+    </div>
+  </div>
+
+  <!-- Script code -->
+   <script>
+    function register(){
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let errorMsg = document.getElementById("errorMsg");
+
+      // Clear previous message
+      //errorMsg.innerText ="";
+
+      // Validation
+      if(name ===""|| email === "" || password ===""){
+        //alert("⚠️ Please fill all details correctly");
+        errorMsg.innerText = "⚠️ Please fill all details correctly";
+        return;
+      }
+
+      // Email format check
+      if(!email.includes("@")){
+        //alert("⚠️Please enter a valid email");
+        errorMsg.innerText = "⚠️Please enter a valid email"
+        return;
+      }
+
+      //Password length check
+      if(password.length < 6){
+        //alert("⚠️ Password must be at least 6 characters");
+        errorMsg.innerText = "⚠️ Password must be at least 6 characters";
+        return;
+      }
+
+      // Save user
+
+      let user = {name,email, password};
+      localStorage.setItem("user", JSON.stringify(user));
+      
+
+     // alert("✅ Registered Successfully!");
+     errorMsg.style.color = "green";
+     errorMsg.innerText = "✅ Registered Successfully" ;
+    //window.location.href = "index.html";
+    
+    // Redirect after 1.5 second
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1500);
+    }
+   </script>
+
+  
+</body>
+</html>

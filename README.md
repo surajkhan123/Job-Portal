@@ -36,15 +36,15 @@ Users can register, login, search jobs, apply, and track applications.
 ## 📷 Screenshots
 
 ### 🏠 Home Page
-![Home](home.png)
+![Home](images/home.png)
 ### 🔐 Registration Page
-![Login](register.png)
+![Login](images/register.png)
 
 ### 🔐 Login Page
-![Login](login.png)
+![Login](images/login.png)
 
 ### 📊 Dashboard
-![Dashboard](dashboard.png)
+![Dashboard](images/dashboard.png)
 
 
 
